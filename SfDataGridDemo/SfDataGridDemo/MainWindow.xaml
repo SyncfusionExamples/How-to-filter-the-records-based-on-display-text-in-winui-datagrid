@@ -1,0 +1,31 @@
+﻿<Window
+    x:Class="SfDataGridDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SfDataGridDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.DataGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="dataGrid" 
+                               AutoGenerateColumns="False"
+                               AllowFiltering="True"
+                               AllowEditing="True"
+                               ColumnWidthMode="Star"                               
+                               ItemsSource="{Binding ProductInfo}">
+            <syncfusion:SfDataGrid.DataContext>
+                <local:ProductSalesDetailsCollection />
+            </syncfusion:SfDataGrid.DataContext>
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn HeaderText="Product" MappingName="Product" />
+                <syncfusion:GridTextColumn HeaderText="Country" MappingName="Country" />
+                <syncfusion:GridTextColumn HeaderText="State" MappingName="State" />
+                <syncfusion:GridNumericColumn HeaderText="Quantity" MappingName="Quantity" />
+                <syncfusion:GridNumericColumn HeaderText="Discount" MappingName="Discount" />
+                <syncfusion:GridNumericColumn HeaderText="Amount" MappingName="Amount" />
+                <syncfusion:GridDateColumn HeaderText="Delivery Date" MappingName="DeliveryDate" ColumnFilter="DisplayText"  />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Window>
